@@ -1,0 +1,13 @@
+##Which Data Sources Are Available
+
+| tstats count where index=* by index, sourcetype
+
+#Sample Output
+index   sourcetype                                          count
+main	Perfmon:Available Memory	                        183
+main	Perfmon:CPU Load	                                347
+main	Perfmon:Network Interface	                        366
+main	WinEventLog:Application	                            42
+main	WinEventLog:Microsoft-Windows-Sysmon/Operational	3722
+main	WinEventLog:Security	                            228
+main	WinEventLog:System	                                33
