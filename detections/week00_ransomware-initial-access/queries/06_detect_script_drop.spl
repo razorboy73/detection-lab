@@ -1,0 +1,2 @@
+index=* EventCode=11 TargetFilename="C:\\Windows\\Temp\\*.ps1" earliest=05/16/2022:00:00:00 latest=05/16/2022:23:59:59
+| table _time, TargetFilename, Image, CommandLine, User

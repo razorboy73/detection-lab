@@ -1,0 +1,2 @@
+index=* EventCode=1 CommandLine="*OUTSTANDING_GUTTER.exe*" earliest=05/16/2022:00:00:00 latest=05/16/2022:23:59:59
+| table _time, CommandLine, Image, ParentImage, User

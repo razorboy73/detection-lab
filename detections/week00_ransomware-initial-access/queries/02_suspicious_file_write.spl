@@ -1,0 +1,5 @@
+index=main source="WinEventLog:Microsoft-Windows-Sysmon/Operational" EventCode=11 User="DESKTOP-TBV8NEF\keegan" earliest=05/16/2022:00:00:00 latest=05/16/2022:23:59:59
+| search (TargetFilename="*.exe" OR TargetFilename="*.dll" OR TargetFilename="*.dat" OR TargetFilename="*.tmp")
+| search TargetFilename="*\Temp\*" OR TargetFilename="*\AppData\*" OR TargetFilename="*\Downloads\*"
+| table _time, ProcessId, TargetFilename, Image, CommandLine, ParentImage, User
+| sort _time

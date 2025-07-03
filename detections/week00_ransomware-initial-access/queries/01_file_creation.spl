@@ -1,0 +1,3 @@
+source="WinEventLog:Microsoft-Windows-Sysmon/Operational" EventCode=11 User="DESKTOP-TBV8NEF\keegan"
+| table  _time, TargetFilename, Image, CommandLine, ParentImage, ProcessId, User
+| sort  _time

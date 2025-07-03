@@ -1,0 +1,2 @@
+index=main EventCode=1 ProcessId=<ProcessIdFromEvent11>
+| table _time, Image, CommandLine, ParentImage, ParentProcessId, User

@@ -1,0 +1,1 @@
+"C:\\Windows\\Temp\\script.ps1" earliest=05/16/2022:00:00:00 latest=05/16/2022:23:59:59 source="WinEventLog:Microsoft-Windows-Sysmon/Operational"

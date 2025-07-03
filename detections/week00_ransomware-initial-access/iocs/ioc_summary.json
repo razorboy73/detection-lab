@@ -1,0 +1,57 @@
+{
+  "case_id": "week00_ransomware_initial_access",
+  "date_range": {
+    "start": "2022-05-16T00:00:00Z",
+    "end": "2022-05-16T23:59:59Z"
+  },
+  "host": "Keegan's Workstation",
+  "file_iocs": [
+    {
+      "type": "executable",
+      "filename": "OUTSTANDING_GUTTER.exe",
+      "path": "C:\\Windows\\Temp\\OUTSTANDING_GUTTER.exe"
+    },
+    {
+      "type": "script",
+      "filename": "script.ps1",
+      "path": "C:\\Windows\\Temp\\script.ps1"
+    },
+    {
+      "type": "text",
+      "filename": "BlackSun_README.txt",
+      "path": "C:\\Users\\keegan\\Desktop\\BlackSun_README.txt"
+    },
+    {
+      "type": "image",
+      "filename": "blacksun.jpg",
+      "path": "C:\\Users\\keegan\\AppData\\blacksun.jpg"
+    }
+  ],
+  "network_iocs": {
+    "dns": [
+      "886e-181-215-214-32.ngrok.io",
+      "9030-181-215-214-32.ngrok.io"
+    ],
+    "ip": [
+      "3.134.125.175",
+      "3.134.39.220",
+      "3.14.182.203",
+      "3.17.7.232",
+      "3.22.30.40"
+    ],
+    "ports": [443]
+  },
+  "persistence": [
+    {
+      "method": "Scheduled Task",
+      "command": "SCHTASKS /Create /TN \"OUTSTANDING_GUTTER.exe\" /TR \"C:\\Windows\\Temp\\OUTSTANDING_GUTTER.exe\" /SC ONEVENT /EC Application /MO *[System/EventID=777] /RU \"SYSTEM\" /f"
+    }
+  ],
+  "malware_behavior": [
+    "Disables Windows Defender",
+    "Uses PowerShell with EncodedCommand",
+    "Downloads binary via HTTP",
+    "Creates scheduled task with SYSTEM privileges",
+    "Drops ransom note and changes wallpaper"
+  ]
+}
